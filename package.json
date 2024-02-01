@@ -1,0 +1,23 @@
+{
+  "name": "197-hw1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint . --ext js --report-unused-disable-directives --max-warnings=1",
+    "format": "prettier -w ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv": "^6.3.6"
+  },
+  "devDependencies": {
+    "@cis-1962/eslint-config": "^1.0.4",
+    "assert": "^2.1.0",
+    "eslint": "^8.56.0",
+    "mocha": "^10.2.0",
+    "prettier": "^3.1.1"
+  }
+}
