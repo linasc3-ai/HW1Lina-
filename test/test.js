@@ -1,15 +1,18 @@
-var assert = require('assert');
-const fs = require('fs');
-const { parse } = require('csv-parse/sync');
+
+import  fs  from 'fs'; // built in node file reader 
+import { parse }  from 'csv-parse/sync';
+import  assert  from 'assert'; 
+// const { parse } = import('csv-parse/sync');
+// const assert = import('assert'); 
 
 const PATIENT_INFO_FILE = './data/PatientInfo.csv';
 
-const {
+import {
   mergeLocation,
-  mostConfirmedCase,
+  mostConfirmedCases,
   averageRecoveryTime,
   percentages,
-} = require('../src/functions.js');
+} from '../src/functions.js';
 
 let patientCsv = fs.readFileSync(PATIENT_INFO_FILE);
 let records = parse(patientCsv, {
@@ -51,9 +54,9 @@ records = parse(patientCsv, {
   skip_empty_lines: true,
 });
 
-describe('mostConfirmedCase', () => {
+describe('mostConfirmedCases', () => {
   it('should return the correct value', () => {
-    if (mostConfirmedCase(records) !== '20s') {
+    if (mostConfirmedCases(records) !== '20s') {
       assert.fail('wrong age group returned');
     }
   });
